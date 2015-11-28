@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Burger House</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/simple-sidebar.css"); ?>" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+                  <div class="container">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="#">The Burger House</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                      <ul class="nav navbar-nav">
+                    <li>
+                        <a href="admin">Order</a>
+                    </li>
+                    <li>
+                        <a href="viewOrderHistory">Order History</a>
+                    </li>
+                    <li>
+                        <a href="inventorypage">Inventory</a>
+                    </li>
+                    <li>
+                        <a href="view">Logout</a>
+                    </li>
+                    
+                </ul>
+                    </div><!--/.navbar-collapse -->
+                  </div>
+                </nav>
+        <br>
+   <!-- Page Content -->
+
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Products
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div  style="float:left; position:fixed">
+        <table class="table table-hover" id="ordertable">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+
+        </table>
+        <h5>Total Cost:</h6>
+        <p id="totalcost"></p>
+        <form action="purchase" method="POST">
+            <input type="hidden" name="orderlist" id="orderlist" value="">
+            <input type="hidden" name="orderqtylist" id="orderqtylist" value"">
+            <input type="hidden" name="orderpricelist" id="orderpricelist" value"">
+            <input type="submit" class = "btn btn-success" value="Purchase">
+        </form>
+        </div>
+
+        
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onclick="add('Beefy Burger', bbprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Beefy Burger', bbprice)">Beefy Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Beefy Burger'";
+                    $query = $this->db->query($sql);
+
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var bbprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+                
+            </div>
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onclick="add('Double Beefy Burger', dbprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Beefy Burger', dbprice)">Double Beefy Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Double Beefy Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+
+                 <script type="text/javascript">
+                    var dbprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onclick="add('Triply Beefy Burger', tbprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Beefy Burger', tbprice)">Triply Beefy Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Triply Beefy Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var tbprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Cheesy Beefy Burger', cbbprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Cheesy Beefy Burger', cbbprice)">Cheesy Beefy Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Cheesy Beefy Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var cbbprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Cheesy Doubly Beefy Burger', cdbbprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Cheesy Doubly Beefy Burger', cdbbprice)">Cheesy Doubly Beefy Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Cheesy Doubly Beefy Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var cdbbprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Burger++', bprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Burger++', bprice)">Burger++</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Burger++'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var bprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+        </div>
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Burger--', bminusprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Burger--', bminusprice)">Burger--</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Burger--'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var bminusprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Chiky Burger', chikyprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Chiky Burger', chikyprice)">Chiky Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Chiky Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var chikyprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Veg-eta Burger', vegprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Veg-eta Burger', vegprice)">Veg-eta Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Veg-eta Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var vegprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+        </div>
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-2 portfolio-item"  style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Hotspot Burger', hotprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Hotspot Burger', hotprice)">Hotspot Burger</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Hotspot Burger'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var hotprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item" style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Burgerlette', bletteprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Burgerlette', bletteprice)">Burgerlette</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Burgerlette'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var bletteprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item" style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Fries', fprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Fries', fprice)">Fries</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Fries'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var fprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+        </div>
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-2 portfolio-item" style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Nachos', nprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Nachos', nprice)">Nachos</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Nachos'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var nprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item" style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Nacho-Fries', nfprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Nacho-Fries', nfprice)">Nacho-Fries</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Nacho-Fries'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var nfprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+            <div class="col-md-2 portfolio-item" style="float:right;">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onClick="add('Drinks', dprice)">
+                </a>
+                <h4>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Drinks', dprice)">Drinks</a>
+                </h4>
+                <?php
+                    $sql = "SELECT price FROM product where pname='Drinks'";
+                    $query = $this->db->query($sql)
+                ?>
+                <p>Php <?php foreach($query->result() as $row){
+                    echo $row->price;
+                }
+                 ?></p>
+                 <script type="text/javascript">
+                    var dprice = <?php foreach($query->result() as $row){
+                                    echo $row->price;
+
+                                }
+                            ?>
+                 </script>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+    </div>
+        
+    <script type="text/javascript">
+        var capnum = 0;
+        var pname;
+        var dropdown1;
+        var currentprice;
+        var totalprice;
+        var selectedquantity = 1;
+        var supertotalprice = 0;
+        var orderlist = new Array();
+        var orderqtylist = new Array();
+        var orderpricelist = new Array();
+        function add(pnamefromclick, currprice){
+             pname = pnamefromclick;
+             currentprice = currprice;
+             document.getElementById("printproductname").innerHTML = pname;
+        }
+        function insert(){
+
+            dropdown1 = document.getElementById("quantityselect");
+
+            selectedquantity = document.getElementById("quantityselect").value;
+            totalprice = selectedquantity * currentprice;
+
+            supertotalprice += totalprice;
+            document.getElementById("totalcost").innerHTML = supertotalprice;
+
+            var table = document.getElementById("ordertable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = pname;
+            cell2.innerHTML = selectedquantity;
+            cell3.innerHTML = totalprice;
+
+            orderlist.push(pname);
+            document.getElementById('orderlist').value = JSON.stringify(orderlist);
+            orderqtylist.push(selectedquantity);
+            document.getElementById('orderqtylist').value = JSON.stringify(orderqtylist);
+            orderpricelist.push(totalprice);
+            document.getElementById('orderpricelist').value = JSON.stringify(orderpricelist);
+        }
+
+        function cleartable(){
+            var table = document.getElementById("ordertable");
+            var rowCount = table.rows.length;
+            while(table.rows.length > 1) {
+              table.deleteRow(-1);
+            }
+        }
+
+        function getOrderlist(){
+
+        }
+    </script>
+
+    <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirm Purchase</h4>
+              </div>
+              <div class="modal-body">
+
+              <p id="printproductname"></p>
+              <p>Choose how much to purchase.</p>
+                <!-- Dropdown for quantity-->
+                <select id="quantityselect">
+                    <?php for ($i = 1; $i <= 100; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+                <!-- End of Dropdown for quantity-->
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="insert()">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-2.1.4.min.js"); ?>"></script>
+   <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
