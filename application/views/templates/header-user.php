@@ -15,9 +15,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
 
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="<?php echo base_url("assets/css/simple-sidebar.css"); ?>" rel="stylesheet">
+    <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-2.1.4.min.js"); ?>"></script>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="<?php echo base_url("DataTables-1.10.9/media/css/jquery.dataTables.css"); ?>" />
+
+    <!-- DataTables -->
+    <script type="text/javascript" src="<?php echo base_url("DataTables-1.10.9/media/js/jquery.dataTables.js"); ?>"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
