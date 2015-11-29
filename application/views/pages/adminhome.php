@@ -88,12 +88,7 @@
         </table>
         <h5>Total Cost:</h6>
         <p id="totalcost"></p>
-        <form action="purchase" method="POST">
-            <input type="hidden" name="orderlist" id="orderlist" value="">
-            <input type="hidden" name="orderqtylist" id="orderqtylist" value"">
-            <input type="hidden" name="orderpricelist" id="orderpricelist" value"">
-            <input type="submit" class = "btn btn-success" value="Purchase">
-        </form>
+        <button class = "btn btn-success" data-toggle = "modal" data-target = "#purchaseModal"> Purchase </button>
         </div>
 
         
@@ -578,12 +573,18 @@
               <div class="modal-body">
 
               <p>Are you sure you want to purchase?</p>
+              <form action="purchase" method="POST">
+                <input type="hidden" name="orderlist" id="orderlist" value="">
+                <input type="hidden" name="orderqtylist" id="orderqtylist" value"">
+                <input type="hidden" name="orderpricelist" id="orderpricelist" value"">
+              
 
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="insert()">Confirm</button>
+                <input type="submit" class = "btn btn-success" value="Purchase">
+                </form>
               </div>
             </div>
           </div>
