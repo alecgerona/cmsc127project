@@ -87,6 +87,6 @@ class Pages extends CI_Controller {
 		$this->inventory_model->useingredients();
 
 
-		$this->load->view('Pages/adminhome');
+		$this->load->view('pages/adminhome');
 	}
 }
