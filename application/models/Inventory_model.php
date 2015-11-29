@@ -39,205 +39,241 @@ class Inventory_model extends CI_Model{
 
 				
 
-			} else if ($value == 'Double Beefy Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+			} else if ($value['ProductName'] == 'Double Beefy Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Beef Patty'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Beef Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
 				$query = $this->db->query($sql);
-			} else if ($value == 'Triply Beefy Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Big Bun'";
-				$query = $this->db->query($sql);
-
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*3 where itemname='Beef Patty'";
-				$query = $this->db->query($sql);
-
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
+			} else if ($value['ProductName'] == 'Triply Beefy Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*3 where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*3 where itemname='Beef Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*3 where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Cheesy Beefy Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*3 where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Beef Patty'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*3 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Cheesy Beefy Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Beef Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Cheese'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Cheesy Doubly Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Beef Patty'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Cheese'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Cheesy Doubly Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Beef Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Cheese'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Burger++'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Beef Patty'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Cheese'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Burger++'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Beef Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Cheese'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Pineapple Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Bacon'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Cheese'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Burger--'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Small Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Pineapple Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Beef Patty'";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Chiky Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Bacon'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Chicken Patty'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Burger--'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Small Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Beef Patty'";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Chiky Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Chicken Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Pineapple Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Veg-eta Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Mushroom Patty'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Pineapple Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Lettuce'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Veg-eta Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Mushroom Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Cheese'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Mushroom Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Hotspot Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Cheese'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Beef Patty'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Mushroom Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Jalapeno Pepper Pack'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Hotspot Burger'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Lettuce'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Beef Patty'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Tomato Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Jalapeno Pepper Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Lettuce'";
 				$query = $this->db->query($sql);
 
-			} else if ($value == 'Fries'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*1 where itemname='Fries Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*1 where itemname='Cheese Sauce Pack'";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
-			} else if ($value == 'Nachos'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*1 where itemname='Nachos Pack'";
-				$query = $this->db->query($sql);
-
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*1 where itemname='Chili con carne pack'";
+			} else if ($value['ProductName'] == 'Fries'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*1 where itemname='Fries Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter]*2 where itemname='Cheese Sauce Pack'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*1 where itemname='Cheese Sauce Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+			} else if ($value['ProductName'] == 'Nachos'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*1 where itemname='Nachos Pack'";
 				$query = $this->db->query($sql);
 
-			} else if($value == 'Drinks'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Drinks'";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*1 where itemname='Chili con carne pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Cheese Sauce Pack'";
+				$query = $this->db->query($sql);
+
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+
+			} else if($value['ProductName'] == 'Drinks'){
+				$name = $value['ProductName'];
+				$minuser = $value['Quantity'];
+				$price = $value['Price'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Drinks'";
+				$query = $this->db->query($sql);
+
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
 				$query = $this->db->query($sql);
 			}
 			$counter++;
