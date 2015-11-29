@@ -18,6 +18,21 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Beef Patty'";
+				$query = $this->db->query($sql);
+
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Coleslaw'";
+				$query = $this->db->query($sql);
+
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Lettuce'";
+				$query = $this->db->query($sql);
+
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Tomato Pack'";
+				$query = $this->db->query($sql);
+
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$query = $this->db->query($sql);
+
 				
 
 			} else if ($value == 'Double Beefy Burger'){
