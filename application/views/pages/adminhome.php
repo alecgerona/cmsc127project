@@ -510,12 +510,7 @@
             bt.className = 'table-remove glyphicon glyphicon-remove';
             cell4.appendChild(bt);
 
-            orderlist.push(pname);
-            document.getElementById('orderlist').value = JSON.stringify(orderlist);
-            orderqtylist.push(selectedquantity);
-            document.getElementById('orderqtylist').value = JSON.stringify(orderqtylist);
-            orderpricelist.push(totalprice);
-            document.getElementById('orderpricelist').value = JSON.stringify(orderpricelist);
+            
         }
 
         function cleartable(){
