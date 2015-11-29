@@ -576,8 +576,6 @@
               <p>Are you sure you want to purchase?</p>
               <form action="purchase" method="POST">
                 <input type="hidden" name="orderlist" id="orderlist" value="">
-                <input type="hidden" name="orderqtylist" id="orderqtylist" value"">
-                <input type="hidden" name="orderpricelist" id="orderpricelist" value"">
               
 
               </div>
