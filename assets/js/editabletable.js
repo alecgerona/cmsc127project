@@ -51,6 +51,5 @@ $BTN.click(function () {
   });
   
   // Output the result
-  window.alert(JSON.stringify(data));
   document.getElementById("orderlist").value = JSON.stringify(data);
 });
