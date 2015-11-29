@@ -89,16 +89,4 @@ class Pages extends CI_Controller {
 
 		$this->load->view('Pages/adminhome');
 	}
-
-
-
-	public function buyburger(){
-		$this->load->database();
-		$this->load->model('inventory_model');
-
-		$data['order'] = $this->inventory_model->pushburger();
-		$this->load->view('templates/header-admin');
-        $this->load->view('pages/adminhome', $data);
-        $this->load->view('templates/footer');
-	}
 }
