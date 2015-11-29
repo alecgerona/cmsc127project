@@ -73,7 +73,7 @@
         </div>
         <!-- /.row -->
 
-        <div  style="float:left; position:fixed">
+        <div id="sampletable" style="float:left; position:fixed">
         <table class="table table-hover" id="ordertable">
             <thead>
                 <tr>
@@ -490,6 +490,9 @@
              currentprice = currprice;
              document.getElementById("printproductname").innerHTML = pname;
         }
+
+
+
         function insert(){
 
             dropdown1 = document.getElementById("quantityselect");
@@ -505,9 +508,15 @@
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
             cell1.innerHTML = "<div contenteditable>"+pname+"</div>";
             cell2.innerHTML = "<div contenteditable>"+selectedquantity+"</div>";
             cell3.innerHTML = "<div contenteditable>"+totalprice+"</div>";
+            var bt = document.createElement("BUTTON");
+            bt.className = 'table-remove glyphicon glyphicon-remove';
+            cell4.appendChild(bt);
+
 
             orderlist.push(pname);
             document.getElementById('orderlist').value = JSON.stringify(orderlist);
@@ -569,6 +578,7 @@
 
     <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-2.1.4.min.js"); ?>"></script>
    <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+   <script type="text/javascript" src="<?php echo base_url("assets/js/editabletable.js"); ?>"></script>
 
     <!-- Menu Toggle Script -->
     <script>
