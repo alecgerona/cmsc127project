@@ -1,4 +1,4 @@
-var $TABLE = $('#table');
+var $TABLE = $('#ordertable');
 var $BTN = $('#export-btn');
 var $EXPORT = $('#export');
 
@@ -50,5 +50,5 @@ $BTN.click(function () {
   });
   
   // Output the result
-  $EXPORT.text(JSON.stringify(data));
+  window.alert(JSON.stringify(data));
 });

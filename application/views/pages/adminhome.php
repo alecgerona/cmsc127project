@@ -88,7 +88,7 @@
         </table>
         <h5>Total Cost:</h6>
         <p id="totalcost"></p>
-        <button class = "btn btn-success" data-toggle = "modal" data-target = "#purchaseModal"> Purchase </button>
+        <button class = "btn btn-success" id="export-btn" data-toggle = "modal" data-target = "#purchaseModal"> Purchase </button>
         </div>
 
         
@@ -527,6 +527,7 @@
         }
 
         function getOrderlist(){
+
 
         }
     </script>
