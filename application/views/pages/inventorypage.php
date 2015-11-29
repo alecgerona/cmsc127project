@@ -69,7 +69,13 @@
     <div>
 
     </div>
-        
+
+        <script type="text/javascript">
+        $(document).ready( function () {
+            $('#ordertable').DataTable();
+        } );
+        </script>
+            
         
     <script type="text/javascript">
         var capnum = 0;
@@ -123,6 +129,7 @@
 
         }
     </script>
+
 
     <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
