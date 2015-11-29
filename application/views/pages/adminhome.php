@@ -80,6 +80,8 @@
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th></th> <!--Place holders for the delete and move up/down buttons -->
+                    <th></th> <!--Place holders for the delete and move up/down buttons -->
                 </tr>
             </thead>
 
