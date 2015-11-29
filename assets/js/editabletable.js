@@ -1,6 +1,7 @@
 var $TABLE = $('#ordertable');
 var $BTN = $('#export-btn');
 var $EXPORT = $('#export');
+var $OLIST = $('#orderlist');
 
 $('.table-add').click(function () {
   var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
@@ -33,7 +34,7 @@ $BTN.click(function () {
   
   // Get the headers (add special header logic here)
   $($rows.shift()).find('th:not(:empty)').each(function () {
-    headers.push($(this).text().toLowerCase());
+    headers.push($(this).text().replace(/ /g,''));
   });
   
   // Turn all existing rows into a loopable array
@@ -50,5 +51,6 @@ $BTN.click(function () {
   });
   
   // Output the result
-  document.getElementById('orderlist').value = JSON.stringify(data);
+  window.alert(JSON.stringify(data));
+  document.getElementById("orderlist").value = JSON.stringify(data);
 });
