@@ -7,12 +7,10 @@ class Inventory_model extends CI_Model{
 
 	public function useingredients(){
 		$orderlist = json_decode($this->input->post('orderlist'), true);
-		var_dump($orderlist);
 
 		$name;
 		$minuser = 0;
 		$price;
-		$counter = 0;
 
 		foreach($orderlist as $key => $value){
 			if ($value['ProductName'] == 'Beefy Burger'){
@@ -276,7 +274,6 @@ class Inventory_model extends CI_Model{
 				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
 				$query = $this->db->query($sql);
 			}
-			$counter++;
 		}
 		
 
