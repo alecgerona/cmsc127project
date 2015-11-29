@@ -9,12 +9,16 @@ class Inventory_model extends CI_Model{
 		$orderlist = json_decode($this->input->post('orderlist'), true);
 		var_dump($orderlist);
 
+		$name;
 		$minuser = 0;
+		$price;
 		$counter = 0;
 
 		foreach($orderlist as $key => $value){
 			if ($value['ProductName'] == 'Beefy Burger'){
+				$name = $value['ProductName'];
 				$minuser = $value['Quantity'];
+				$price = $value['Price'];
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
@@ -30,7 +34,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
 				$query = $this->db->query($sql);
 
 				
