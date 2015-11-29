@@ -503,9 +503,9 @@
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
-            cell1.innerHTML = pname;
-            cell2.innerHTML = selectedquantity;
-            cell3.innerHTML = totalprice;
+            cell1.innerHTML = "<div contenteditable>"+pname+"</div>";
+            cell2.innerHTML = "<div contenteditable>"+selectedquantity+"</div>";
+            cell3.innerHTML = "<div contenteditable>"+totalprice+"</div>";
 
             orderlist.push(pname);
             document.getElementById('orderlist').value = JSON.stringify(orderlist);
