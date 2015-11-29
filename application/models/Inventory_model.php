@@ -6,34 +6,19 @@ class Inventory_model extends CI_Model{
 	}
 
 	public function useingredients(){
-		$orderlist = json_decode($this->input->post('orderlist'));
-		$orderqtylist = json_decode($this->input->post('orderqtylist'));
-		$orderpricelist = json_decode($this->input->post('orderpricelist'));
+		$orderlist = json_decode($this->input->post('orderlist'), true);
+		var_dump($orderlist);
 
-
-
+		$minuser = 0;
 		$counter = 0;
-		
-		foreach($orderlist as $value){
-			if ($value == 'Beefy Burger'){
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
+
+		foreach($orderlist as $key => $value){
+			if ($value['ProductName'] == 'Beefy Burger'){
+				$minuser = $value['Quantity'];
+				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Big Bun'";
 				$query = $this->db->query($sql);
 
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Beef Patty'";
-				$query = $this->db->query($sql);
-
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Coleslaw'";
-				$query = $this->db->query($sql);
-
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Lettuce'";
-				$query = $this->db->query($sql);
-
-				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Tomato Pack'";
-				$query = $this->db->query($sql);
-
-
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$value', $orderqtylist[$counter], $orderpricelist[$counter], CURRENT_DATE, CURRENT_TIMESTAMP)";
-				$query = $this->db->query($sql);
+				
 
 			} else if ($value == 'Double Beefy Burger'){
 				$sql = "UPDATE inventory SET itemcount=itemcount-$orderqtylist[$counter] where itemname='Big Bun'";
