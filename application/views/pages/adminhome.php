@@ -81,7 +81,6 @@
                     <th>Quantity</th>
                     <th>Price</th>
                     <th></th> <!--Place holders for the delete and move up/down buttons -->
-                    <th></th> <!--Place holders for the delete and move up/down buttons -->
                 </tr>
             </thead>
 
@@ -509,14 +508,12 @@
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
             cell1.innerHTML = "<div contenteditable>"+pname+"</div>";
             cell2.innerHTML = "<div contenteditable>"+selectedquantity+"</div>";
             cell3.innerHTML = "<div contenteditable>"+totalprice+"</div>";
             var bt = document.createElement("BUTTON");
             bt.className = 'table-remove glyphicon glyphicon-remove';
             cell4.appendChild(bt);
-
 
             orderlist.push(pname);
             document.getElementById('orderlist').value = JSON.stringify(orderlist);
