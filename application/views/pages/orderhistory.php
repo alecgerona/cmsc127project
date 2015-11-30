@@ -71,11 +71,16 @@
 
 
         </table>
-
+        <br>
     </div>
     <div>
 
     </div>
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#ordertable').DataTable();
+        } );
+        </script>
 
 
     <!-- Modal -->
