@@ -63,7 +63,7 @@
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onclick="add('Double Beefy Burger', dbprice)">
                 </a>
                 <h4>
-                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Beefy Burger', dbprice)">Double Beefy Burger</a>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Double Beefy Burger', dbprice)">Double Beefy Burger</a>
                 </h4>
                 <?php
                     $sql = "SELECT price FROM product where pname='Double Beefy Burger'";
@@ -87,7 +87,7 @@
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="" data-toggle="modal" data-target="#myModal" onclick="add('Triply Beefy Burger', tbprice)">
                 </a>
                 <h4>
-                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Beefy Burger', tbprice)">Triply Beefy Burger</a>
+                    <a href="#" data-toggle="modal" data-target="#myModal" onClick="add('Triply Beefy Burger', tbprice)">Triply Beefy Burger</a>
                 </h4>
                 <?php
                     $sql = "SELECT price FROM product where pname='Triply Beefy Burger'";
