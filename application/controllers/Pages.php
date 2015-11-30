@@ -53,17 +53,17 @@ class Pages extends CI_Controller {
 			// If user did validate, 
 			// Send them to members area
 			$this->load->view('templates/header-user');
-			redirect('Pages/admin');
+			redirect('Pages/user');
 			$this->load->view('templates/footer-user');
 		}		
 	}
 
-	public function admin(){
+	public function user(){
 	 	$this->load->database();
 	 	$this->load->model('inventory_model');
 
 	 	$this->load->view('templates/header-user');
-        $this->load->view('pages/adminhome');
+        $this->load->view('pages/user');
         $this->load->view('templates/footer-user');
 	}
 

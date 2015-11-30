@@ -47,8 +47,9 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                       <ul class="nav navbar-nav">
+
                     <li>
-                        <a href="admin">Order</a>
+                        <a href="user">Order</a>
                     </li>
                     <li>
                         <a href="viewOrderHistory">Order History</a>
