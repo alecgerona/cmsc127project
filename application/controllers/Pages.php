@@ -94,7 +94,7 @@ class Pages extends CI_Controller {
 		$this->inventory_model->useingredients();
 
 		$this->load->view('templates/header-user');
-		$this->load->view('pages/adminhome');
+		$this->load->view('pages/user');
 		$this->load->view('templates/footer-user');
 	}
 }
