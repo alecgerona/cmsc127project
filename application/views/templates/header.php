@@ -20,7 +20,7 @@
 			          <a class="navbar-brand" href="#">The Burger House</a>
 			        </div>
 			        <div id="navbar" class="navbar-collapse collapse">
-			          <form class="navbar-form navbar-right" action = "process" method="post" name="process">
+			          <form class="navbar-form navbar-right" action = "process" method="post" name="project">
 			            <div class="form-group">
 
 			              <input type="text" placeholder="Username" class="form-control" id="username" name="username">

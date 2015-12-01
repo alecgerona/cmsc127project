@@ -1,65 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>The Burger House</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="<?php echo base_url("assets/css/simple-sidebar.css"); ?>" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
- <nav class="navbar navbar-inverse navbar-fixed-top">
-                  <div class="container">
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <a class="navbar-brand" href="#">The Burger House</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                      <ul class="nav navbar-nav">
-                    <li>
-                        <a href="admin">Order</a>
-                    </li>
-                    <li>
-                        <a href="viewOrderHistory">Order History</a>
-                    </li>
-                    <li>
-                        <a href="inventorypage">Inventory</a>
-                    </li>
-                    <li>
-                        <a href="view">Logout</a>
-                    </li>
-                    
-                </ul>
-                    </div><!--/.navbar-collapse -->
-                  </div>
-                </nav>
-        <br>
    <!-- Page Content -->
 
     <div class="container">
@@ -73,13 +11,14 @@
         </div>
         <!-- /.row -->
 
-        <div  style="float:left; position:fixed">
+        <div id="sampletable" style="float:left; position:fixed">
         <table class="table table-hover" id="ordertable">
             <thead>
                 <tr>
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th></th> <!--Place holders for the delete and move up/down buttons -->
                 </tr>
             </thead>
 
@@ -87,12 +26,7 @@
         </table>
         <h5>Total Cost:</h6>
         <p id="totalcost"></p>
-        <form action="purchase" method="POST">
-            <input type="hidden" name="orderlist" id="orderlist" value="">
-            <input type="hidden" name="orderqtylist" id="orderqtylist" value"">
-            <input type="hidden" name="orderpricelist" id="orderpricelist" value"">
-            <input type="submit" class = "btn btn-success" value="Purchase">
-        </form>
+        <button class = "btn btn-success" id="export-btn" data-toggle = "modal" data-target = "#purchaseModal"> Purchase </button>
         </div>
 
         
@@ -488,6 +422,9 @@
              currentprice = currprice;
              document.getElementById("printproductname").innerHTML = pname;
         }
+
+
+
         function insert(){
 
             dropdown1 = document.getElementById("quantityselect");
@@ -503,16 +440,15 @@
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
-            cell1.innerHTML = pname;
-            cell2.innerHTML = selectedquantity;
-            cell3.innerHTML = totalprice;
+            var cell4 = row.insertCell(3);
+            cell1.innerHTML = "<div contenteditable>"+pname+"</div>";
+            cell2.innerHTML = "<div contenteditable>"+selectedquantity+"</div>";
+            cell3.innerHTML = "<div contenteditable>"+totalprice+"</div>";
+            var bt = document.createElement("BUTTON");
+            bt.className = 'table-remove glyphicon glyphicon-remove';
+            cell4.appendChild(bt);
 
-            orderlist.push(pname);
-            document.getElementById('orderlist').value = JSON.stringify(orderlist);
-            orderqtylist.push(selectedquantity);
-            document.getElementById('orderqtylist').value = JSON.stringify(orderqtylist);
-            orderpricelist.push(totalprice);
-            document.getElementById('orderpricelist').value = JSON.stringify(orderpricelist);
+            
         }
 
         function cleartable(){
@@ -524,6 +460,7 @@
         }
 
         function getOrderlist(){
+
 
         }
     </script>
@@ -559,23 +496,29 @@
         </div>
     <!--End Modal -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <!-- Modal -->
+        <div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirm Purchase</h4>
+              </div>
+              <div class="modal-body">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+              <p>Are you sure you want to purchase?</p>
+              <form action="purchase" method="POST">
+                <input type="hidden" name="orderlist" id="orderlist" value="">
+              
 
-    <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-2.1.4.min.js"); ?>"></script>
-   <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
-</body>
-
-</html>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <input type="submit" class = "btn btn-success" value="Purchase">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->

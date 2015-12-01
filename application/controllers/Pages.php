@@ -1,10 +1,6 @@
 <?php
-
 class Pages extends CI_Controller {
 
-	
-
-	
 	public function view($page = 'home'){
 
 		 if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
@@ -29,7 +25,9 @@ class Pages extends CI_Controller {
 	public function inventorypage(){
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->popinventory();
+		$this->load->view('templates/header-user');
 		$this->load->view('pages/inventorypage', $data);
+		$this->load->view('templates/footer-user');
 	}
 
 	public function addinventory(){
@@ -37,7 +35,9 @@ class Pages extends CI_Controller {
 		$this->inventory_model->pushinventory();
 
 		$data['query'] = $this->inventory_model->popinventory();
+		$this->load->view('templates/header-user');
 		$this->load->view('pages/inventorypage', $data);
+		$this->load->view('templates/footer-user');
 	}
 
 	public function process(){
@@ -52,7 +52,9 @@ class Pages extends CI_Controller {
 		}else{
 			// If user did validate, 
 			// Send them to members area
+			$this->load->view('templates/header-user');
 			redirect('Pages/admin');
+			$this->load->view('templates/footer-user');
 		}		
 	}
 
@@ -60,17 +62,18 @@ class Pages extends CI_Controller {
 	 	$this->load->database();
 	 	$this->load->model('inventory_model');
 
-
-
+	 	$this->load->view('templates/header-user');
         $this->load->view('pages/adminhome');
+        $this->load->view('templates/footer-user');
 	}
 
 	public function viewOrderHistory(){
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->poporderhistory();
 		
-
+		$this->load->view('templates/header-user');
 		$this->load->view('pages/orderhistory', $data);
+		$this->load->view('templates/footer-user');
 	}
 
 	public function generateSOR(){
@@ -90,19 +93,8 @@ class Pages extends CI_Controller {
 		$this->load->model('inventory_model');
 		$this->inventory_model->useingredients();
 
-
-		$this->load->view('Pages/adminhome');
-	}
-
-
-
-	public function buyburger(){
-		$this->load->database();
-		$this->load->model('inventory_model');
-
-		$data['order'] = $this->inventory_model->pushburger();
-		$this->load->view('templates/header-admin');
-        $this->load->view('pages/adminhome', $data);
-        $this->load->view('templates/footer');
+		$this->load->view('templates/header-user');
+		$this->load->view('pages/adminhome');
+		$this->load->view('templates/footer-user');
 	}
 }
