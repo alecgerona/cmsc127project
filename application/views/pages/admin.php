@@ -1,7 +1,7 @@
 <br>
 <br>
 <div class="row">
-    <div style="padding-left:5%;">
+    <div align="center">
         <a data-toggle="modal" data-target="#addAdmin" class = "btn btn-default">Add new Admin account</a>
         <a data-toggle="modal" data-target="#addUser" class = "btn btn-default">Add new User account</a>
     </div>
@@ -10,7 +10,7 @@
 <br>
 
 
-<div class="row" style="padding-left:1%;">
+<div class="row" align="center">
 
 <?php foreach ($query as $row): { ?>
        <div class="col-lg-5">
@@ -35,7 +35,7 @@
 </div>
 <br>
 
-<div class ="row" style="padding-left:1%;">
+<div class ="row" align="center">
 <?php foreach ($query2 as $row): { ?>
        <div class="col-lg-5">
         <div class="media">
