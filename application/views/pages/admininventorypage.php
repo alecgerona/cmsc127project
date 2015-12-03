@@ -18,15 +18,15 @@
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
-                    <th>Item Count</th>
                     <th>Item Name</th>
+                    <th>Item Count</th>
                 </tr>
             </thead>
 
             <?php foreach ($query as $row): { ?>
             <tr>
-                <td><?php echo $row['itemcount'];?></td>
                 <td><?php echo $row['itemname'];?></td>
+                <td><?php echo $row['itemcount'];?></td>
             </tr>    
             <?php } ?>
             <?php endforeach; ?>
