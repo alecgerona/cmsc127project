@@ -12,7 +12,7 @@
                 <h4 class="media-heading"><?php echo $row['name'];?><small> Admin</small></h4>
                 <h5>@<?php echo $row['username'];?></h5>
                 <h5>Password: <?php echo $row['password'];?></h5>
-                <a data-toggle="modal" data-target="#myModal" class="btn-sm btn-warning" onclick="editselection('<?php echo $row['name'];?>', '<?php echo $row['username'];?>', '<?php echo $row['password'];?>'')">Edit</a>
+                <a data-toggle="modal" data-target="#myModal" class="btn-sm btn-warning" onclick="editselection('<?php echo $row['name'];?>', '<?php echo $row['username'];?>', '<?php echo $row['password'];?>')">Edit</a>
                 <a href="#" class="btn-sm btn-danger">Delete</a>
                 <hr style="margin:8px auto">
             </div>
