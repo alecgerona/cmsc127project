@@ -10,7 +10,7 @@
 <br>
 
 
-<div class="row">
+<div class="row" style="padding-left:1%;">
 
 <?php foreach ($query as $row): { ?>
        <div class="col-lg-5">
@@ -34,7 +34,7 @@
 <?php endforeach; ?>
 </div>
 
-<div class ="row">
+<div class ="row" style="padding-left:1%;">
 <?php foreach ($query2 as $row): { ?>
        <div class="col-lg-5">
         <div class="media">
