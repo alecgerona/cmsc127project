@@ -57,14 +57,14 @@
               <div class="modal-body">
               <form action="updateadmin" method="POST">
                 <p>Name:</p>
-                <input type="text" class="form-control" id="inputadminname" name="inputadminname" value="">
+                <input type="text" class="form-control" id="editusername" name="editusername" value="">
                 <br>
                 <p>Username:</p>
-                <input type="text" class="form-control" id="inputadminusername" name="inputadminusername" value="">
+                <input type="text" class="form-control" id="edituserusername" name="edituserusername" value="">
                 <br>
                 <p>Password:</p>
-                <input type="text" class="form-control" id="inputadminpassword" name="inputadminpassword" value="">
-                <input type="hidden" class="form-control" id="inputadminadminid" name="inputadminadminid" value="">
+                <input type="text" class="form-control" id="edituserpassword" name="edituserpassword" value="">
+                <input type="hidden" class="form-control" id="edituseruserid" name="edituseruserid" value="">
               
 
               </div>

@@ -11,6 +11,8 @@ function deleteadmin(adminname, adminid){
 }
 
 function editUser(username, userusername, userpassword, userid){
-	window.alert(username);
-
+	document.getElementById("editusername").value = username;
+	document.getElementById("edituserusername").value = userusername;
+	document.getElementById("edituserpassword").value = userpassword;
+	document.getElementById("edituseruserid").value = userid;
 }
