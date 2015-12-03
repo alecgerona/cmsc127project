@@ -59,7 +59,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Triply Beefy Burger'){
 				$name = $value['ProductName'];
@@ -80,7 +80,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*3 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Cheesy Beefy Burger'){
 				$name = $value['ProductName'];
@@ -104,7 +104,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Cheese'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Cheesy Doubly Burger'){
 				$name = $value['ProductName'];
@@ -128,7 +128,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Cheese'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Burger++'){
 				$name = $value['ProductName'];
@@ -158,7 +158,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Bacon'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Burger--'){
 				$name = $value['ProductName'];
@@ -191,7 +191,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Pineapple Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Veg-eta Burger'){
 				$name = $value['ProductName'];
@@ -215,7 +215,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Mushroom Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Hotspot Burger'){
 				$name = $value['ProductName'];
@@ -236,7 +236,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 
 			} else if ($value['ProductName'] == 'Fries'){
@@ -249,7 +249,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*1 where itemname='Cheese Sauce Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			} else if ($value['ProductName'] == 'Nachos'){
 				$name = $value['ProductName'];
@@ -264,7 +264,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser*2 where itemname='Cheese Sauce Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 
 			} else if($value['ProductName'] == 'Drinks'){
@@ -274,7 +274,7 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Drinks'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
 			}
 		}
