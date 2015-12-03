@@ -255,6 +255,16 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer-admin');
 	}
 
+	public function sortdailyrecord(){
+		$this->load->database();
+		$this->load->model('inventory_model');
+		$data['query'] = $this->inventory_model->poprecorddaily();
+
+		$this->load->view('templates/header-admin');
+		$this->load->view('pages/admininventoryrecordpage', $data);
+		$this->load->view('templates/footer-admin');
+	}
+
 	public function sortmonthly(){
 		$this->load->database();
 		$this->load->model('inventory_model');
@@ -291,6 +301,17 @@ class Pages extends CI_Controller {
 		$this->load->model('inventory_model');
 		$data['query'] = json_decode($this->input->post('orderlist'), true); //Generate array from the posted info
 		$html = $this->load->view('pages/sortorderhistorylite', $data, true);
+		$pdfFilePath = "tbhsalesorderreport.pdf";
+		$this->load->library('m_pdf');
+		$pdf = $this->m_pdf->load();
+		$pdf->WriteHTML($html);
+		$pdf->Output();
+	}
+
+	public function sortSORrecord(){
+		$this->load->model('inventory_model');
+		$data['query'] = json_decode($this->input->post('orderlist'), true); //Generate array from the posted info
+		$html = $this->load->view('pages/inventoryrecordlite', $data, true);
 		$pdfFilePath = "tbhsalesorderreport.pdf";
 		$this->load->library('m_pdf');
 		$pdf = $this->m_pdf->load();

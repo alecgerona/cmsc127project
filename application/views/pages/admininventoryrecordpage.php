@@ -9,8 +9,15 @@
             </div>
         </div>
         <!-- /.row -->
-
+        <div align="center">
+            <a data-toggle="modal" data-target="#SOR" id="export-btn" class="btn btn-primary">Generate Sales Order Report</a>
+        </div>
         <br>
+        <div align="center">
+            <a data-toggle="modal" data-target="#daily" class="btn btn-default">Daily</a>
+            <a data-toggle="modal" data-target="#monthly" class="btn btn-default">Monthly</a>
+            <a data-toggle="modal" data-target="#yearly" class="btn btn-default">Yearly</a>
+        </div>
 
         <div  align="center">
         <table class="table table-striped table-bordered" id="ordertable">
@@ -105,6 +112,63 @@
 
         }
     </script>
+
+    <!-- Generate SOR Modal -->
+        <div class="modal fade" id="SOR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sales Order Report</h4>
+              </div>
+              <div class="modal-body">
+              <p>Are you sure you want to generate a sales order report?</p>
+                
+              <form method = "post" action="sortSORrecord">
+                  <input type="hidden" class="form-control" id="orderlist" name="orderlist">
+    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <input type="submit" class = "btn btn-primary" value="Confirm">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
+
+    <!-- Day Modal -->
+        <div class="modal fade" id="daily" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sort by Day</h4>
+              </div>
+              <div class="modal-body">
+              <p>Choose what day.</p>
+                <!-- Dropdown for quantity-->
+                <select id="dayselect" onchange="changeday()">
+                    <?php for ($i = 1; $i <= 31; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+              <form method = "post" action="sortdaily">
+                  <input type="hidden" class="form-control" id="daychange" name="daychange">
+    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <input type="submit" class = "btn btn-primary" value="Confirm">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
 
 
     <!-- Modal -->

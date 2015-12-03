@@ -345,6 +345,13 @@ class Inventory_model extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function poprecorddaily(){
+		$day = $this->input->post('daychange');
+		$where = "EXTRACT(day FROM date)=$day";
+		$query = $this->db->select('*')->from('invhistory')->where($where)->get();
+		return $query->result_array();
+	}
+
 	public function poporderhistorymonthly(){
 		$month = $this->input->post('monthchange');
 		$where = "EXTRACT(month FROM date)=$month";

@@ -172,7 +172,7 @@
                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                     <?php endfor; ?>
                 </select>
-              <form method = "post" action="sortdaily">
+              <form method = "post" action="sortdailyrecord">
                   <input type="hidden" class="form-control" id="daychange" name="daychange">
     
               </div>
