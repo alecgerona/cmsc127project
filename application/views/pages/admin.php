@@ -35,7 +35,7 @@
                 <h4 class="media-heading"><?php echo $row['name'];?><small> User</small></h4>
                 <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
-                <a data-toggle="modal" data-target="#editUser" class="btn-sm btn-warning">Edit</a>
+                <a data-toggle="modal" data-target="#editUser" onclick="editUser('<?php echo $row['name'];?>', '<?php echo $row['username'];?>', '<?php echo $row['password'];?>', '<?php echo $row['userid'];?>')" class="btn-sm btn-warning">Edit</a>
                 <a href="#" class="btn-sm btn-danger">Delete</a>
             </div>
         </div>

@@ -9,3 +9,8 @@ function deleteadmin(adminname, adminid){
 	document.getElementById("deleteadminname").innerHTML = "Delete " + adminname + "'s account?";
 	document.getElementById("deleteadminadminid").value = adminid;
 }
+
+function editUser(username, userusername, userpassword, userid){
+	window.alert(username);
+
+}
