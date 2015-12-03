@@ -13,9 +13,12 @@ class Admin_model extends CI_Model{
 
 		$sql = "UPDATE admin SET name='$name', username='$username', password='$password' where adminid=$id";
 		$query = $this->db->query($sql);
+	}
 
-
-
+	public function deleteadmininfo(){
+		$id = $this->input->post('deleteadminadminid');
+		$sql = "DELETE FROM admin where adminid=$id";
+		$query = $this->db->query($sql);
 	}
 }
 ?>

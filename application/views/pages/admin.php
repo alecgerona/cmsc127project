@@ -35,7 +35,7 @@
                 <h4 class="media-heading"><?php echo $row['fname'] . " " . $row['mname'] . ". " . $row['lname'];?><small> User</small></h4>
                 <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
-                <a data-toggle="modal" data-target="#myModal" class="btn-sm btn-warning">Edit</a>
+                <a data-toggle="modal" data-target="#editUser" class="btn-sm btn-warning">Edit</a>
                 <a href="#" class="btn-sm btn-danger">Delete</a>
             </div>
         </div>
@@ -45,6 +45,38 @@
 <?php } ?>
 <?php endforeach; ?>
 </div>
+
+<!-- Edit Modal for users -->
+        <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit User Account</h4>
+              </div>
+              <div class="modal-body">
+              <form action="updateadmin" method="POST">
+                <p>Name:</p>
+                <input type="text" class="form-control" id="inputadminname" name="inputadminname" value="">
+                <br>
+                <p>Username:</p>
+                <input type="text" class="form-control" id="inputadminusername" name="inputadminusername" value="">
+                <br>
+                <p>Password:</p>
+                <input type="text" class="form-control" id="inputadminpassword" name="inputadminpassword" value="">
+                <input type="hidden" class="form-control" id="inputadminadminid" name="inputadminadminid" value="">
+              
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
 
 <!-- Delete Modal for admins -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
