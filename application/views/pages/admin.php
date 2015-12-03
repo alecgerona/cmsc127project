@@ -56,7 +56,7 @@
                 <h4 class="modal-title" id="myModalLabel">Edit User Account</h4>
               </div>
               <div class="modal-body">
-              <form action="updateadmin" method="POST">
+              <form action="updateuser" method="POST">
                 <p>Name:</p>
                 <input type="text" class="form-control" id="editusername" name="editusername" value="">
                 <br>
