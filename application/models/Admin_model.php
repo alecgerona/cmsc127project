@@ -39,5 +39,14 @@ class Admin_model extends CI_Model{
 		$sql = "INSERT INTO admin(name, username, password) values('$name', '$username', '$password') ";
 		$query = $this->db->query($sql);
 	}
+
+	public function adduserinfo(){
+		$name = $this->input->post('addusername');
+		$username = $this->input->post('adduserusername');
+		$password = $this->input->post('adduserpassword');
+
+		$sql = "INSERT INTO posuser(name, username, password) values('$name', '$username', '$password') ";
+		$query = $this->db->query($sql);
+	}
 }
 ?>
