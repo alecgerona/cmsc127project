@@ -32,7 +32,7 @@
                 <img class="media-object dp img-circle" src="http://placehold.it/700x400" style="width: 100px;height:100px;">
             </a>
             <div class="media-body">
-                <h4 class="media-heading"><?php echo $row['fname'] . " " . $row['mname'] . ". " . $row['lname'];?><small> User</small></h4>
+                <h4 class="media-heading"><?php echo $row['name'];?><small> User</small></h4>
                 <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
                 <a data-toggle="modal" data-target="#editUser" class="btn-sm btn-warning">Edit</a>
