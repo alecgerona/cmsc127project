@@ -28,7 +28,7 @@
                 <img class="media-object dp img-circle" src="http://placehold.it/700x400" style="width: 100px;height:100px;">
             </a>
             <div class="media-body">
-                <h4 class="media-heading"><?php echo $row['fname'] . " " . $row['mname'] . " " . $row['lname'];?><small> User</small></h4>
+                <h4 class="media-heading"><?php echo $row['fname'] . " " . $row['mname'] . ". " . $row['lname'];?><small> User</small></h4>
                 <hr style="margin:8px auto">
             </div>
         </div>
