@@ -9,18 +9,18 @@
             </div>
         </div>
         <!-- /.row -->
-        <div>
+        <div align="center">
             <a data-toggle="modal" data-target="#SOR" id="export-btn" class="btn btn-primary">Generate Sales Order Report</a>
         </div>
         <br>
-        <div>
+        <div align="center">
             <a data-toggle="modal" data-target="#daily" class="btn btn-default">Daily</a>
             <a data-toggle="modal" data-target="#monthly" class="btn btn-default">Monthly</a>
             <a data-toggle="modal" data-target="#yearly" class="btn btn-default">Yearly</a>
         </div>
         <br>
 
-        <div  style="float:left;">
+        <div  align="center">
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
