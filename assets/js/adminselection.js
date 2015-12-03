@@ -18,11 +18,16 @@ function editUser(username, userusername, userpassword, userid){
 }
 
 function changeday(){
-	var day = document.getElementById("dayselect").value;
-	document.getElementById("daychange").value = day;
+	var day = document.getElementById("dayselect").value; //Get the value from the day select
+	document.getElementById("daychange").value = day; //Change the input value to the selected value
 }
 
 function changemonth(){
-	var month = document.getElementById("monthselect").value;
-	document.getElementById("monthchange").value = month;
+	var month = document.getElementById("monthselect").value; //Get the value from the month select
+	document.getElementById("monthchange").value = month; //Change the input value to the selected value
+}
+
+function changeyear(){
+	var year = document.getElementById("yearselect").value; //Get the value from the year select
+	document.getElementById("yearchange").value = year; //Change the input value to the selected value
 }
