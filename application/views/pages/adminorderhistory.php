@@ -69,16 +69,13 @@
               <div class="modal-body">
               <p>Choose what day.</p>
                 <!-- Dropdown for quantity-->
-                <select id="quantityselect">
+                <select id="dayselect" onchange="changeday()">
                     <?php for ($i = 1; $i <= 31; $i++) : ?>
                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                     <?php endfor; ?>
                 </select>
-              <form method = "post" action="addinventory" name="addinventory">
-                  <p>What inventory item would you like to add?</p>
-                  <input type="text" placeholder="Item Name" class="form-control" id="invname" name="invname">
-                  <input type="number" placeholder="Item Quantity" class="form-control" id="invqty" name="invqty">
-                  <input type="number" placeholder="Item Classification" class="form-control" id="invclass" name="invclass">
+              <form method = "post" action="sortdaily">
+                  <input type="hidden" class="form-control" id="daychange" name="daychange">
     
               </div>
               <div class="modal-footer">

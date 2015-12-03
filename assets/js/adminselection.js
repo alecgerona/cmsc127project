@@ -16,3 +16,8 @@ function editUser(username, userusername, userpassword, userid){
 	document.getElementById("edituserpassword").value = userpassword;
 	document.getElementById("edituseruserid").value = userid;
 }
+
+function changeday(){
+	var day = document.getElementById("dayselect").value;
+	document.getElementById("daychange").value = day;
+}
