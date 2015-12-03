@@ -234,6 +234,17 @@ class Pages extends CI_Controller {
 		//$pdf->Output($pdfFilePath, "D");
 	}
 
+	public function sortSOR(){
+		$this->load->model('inventory_model');
+		$data['query'] = json_decode($this->input->post('orderlist'), true); //Generate array from the posted info
+		$html = $this->load->view('pages/sortorderhistorylite', $data, true);
+		$pdfFilePath = "tbhsalesorderreport.pdf";
+		$this->load->library('m_pdf');
+		$pdf = $this->m_pdf->load();
+		$pdf->WriteHTML($html);
+		$pdf->Output();
+	}
+
 	public function purchase(){
 		$this->load->database();
 		$this->load->model('inventory_model');
