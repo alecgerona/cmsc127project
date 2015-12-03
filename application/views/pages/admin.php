@@ -12,7 +12,7 @@
                 <h4 class="media-heading"><?php echo $row['name'];?><small> Admin</small></h4>
                 <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
-                <a href="#" class="btn-sm btn-warning">Edit</a>
+                <a data-toggle="modal" data-target="#myModal" class="btn-sm btn-warning">Edit</a>
                 <a href="#" class="btn-sm btn-danger">Delete</a>
             </div>
         </div>
@@ -34,7 +34,7 @@
                 <h4 class="media-heading"><?php echo $row['fname'] . " " . $row['mname'] . ". " . $row['lname'];?><small> User</small></h4>
                 <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
-                <a href="#" class="btn-sm btn-warning">Edit</a>
+                <a data-toggle="modal" data-target="#myModal" class="btn-sm btn-warning">Edit</a>
                 <a href="#" class="btn-sm btn-danger">Delete</a>
             </div>
         </div>
@@ -44,3 +44,26 @@
 <?php } ?>
 <?php endforeach; ?>
 </div>
+
+<!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Account</h4>
+              </div>
+              <div class="modal-body">
+
+              
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="insert()">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
