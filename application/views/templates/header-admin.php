@@ -49,7 +49,7 @@
                       <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="user">User Accounts</a>
+                        <a href="admin">User Accounts</a>
                     </li>
                     <li>
                         <a href="viewOrderHistory">Order History</a>

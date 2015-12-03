@@ -54,7 +54,8 @@
                 <h4 class="modal-title" id="myModalLabel">Edit Account</h4>
               </div>
               <div class="modal-body">
-
+              <form action="purchase" method="POST">
+                <input type="text" class="form-control" id="username" name="username" value="">
               
 
               </div>
