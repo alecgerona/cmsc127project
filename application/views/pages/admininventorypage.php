@@ -9,12 +9,12 @@
             </div>
         </div>
         <!-- /.row -->
-        <div>
+        <div align="center">
             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Inventory Item</a>
         </div>
         <br>
 
-        <div  style="float:left;">
+        <div  align="center">
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
