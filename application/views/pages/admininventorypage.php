@@ -18,25 +18,15 @@
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
-                    <th>Changed by</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Item Name</th>
                     <th>Item Count</th>
-                    <th>Quantity Added</th>
-                    <th>Quantity Deducted</th>
+                    <th>Item Name</th>
                 </tr>
             </thead>
 
             <?php foreach ($query as $row): { ?>
             <tr>
-                <td><?php echo $row['username'];?></td>
-                <td><?php echo $row['date'];?></td>
-                <td><?php echo $row['time'];?></td>
-                <td><?php echo $row['itemname'];?></td>
                 <td><?php echo $row['itemcount'];?></td>
-                <td><?php echo $row['quantity'];?></td>
-                <td><?php echo $row['quantityminus'];?></td>
+                <td><?php echo $row['itemname'];?></td>
             </tr>    
             <?php } ?>
             <?php endforeach; ?>

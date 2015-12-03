@@ -55,6 +55,9 @@
                         <a href="viewAdminOrderHistory">Order History</a>
                     </li>
                     <li>
+                        <a href="admininventorypage">Inventory</a>
+                    </li>
+                    <li>
                         <a href="admininventoryrecordpage">Inventory Record</a>
                     </li>
                     <li>

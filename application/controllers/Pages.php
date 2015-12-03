@@ -192,6 +192,14 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer-admin');
 	}
 
+	public function admininventorypage(){
+		$this->load->model('inventory_model');
+		$data['query'] = $this->inventory_model->popinventory();
+		$this->load->view('templates/header-admin');
+		$this->load->view('pages/admininventorypage', $data);
+		$this->load->view('templates/footer-admin');
+	}
+
 	public function admininventoryrecordpage(){
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->popinventoryrecord();
