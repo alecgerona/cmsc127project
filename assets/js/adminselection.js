@@ -1,3 +1,5 @@
 function editselection(adminname, adminusername, adminpassword){
-	window.alert(adminname);
+	document.getElementById("inputadminname").value = adminname;
+	document.getElementById("inputadminusername").value = adminusername;
+	document.getElementById("inputadminpassword").value = adminpassword;	
 }

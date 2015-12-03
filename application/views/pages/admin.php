@@ -56,7 +56,14 @@
               </div>
               <div class="modal-body">
               <form action="purchase" method="POST">
-                <input type="text" class="form-control" id="username" name="username" value="">
+                <p>Name:</p>
+                <input type="text" class="form-control" id="inputadminname" name="inputadminname" value="">
+                <br>
+                <p>Username:</p>
+                <input type="text" class="form-control" id="inputadminusername" name="inputadminusername" value="">
+                <br>
+                <p>Password:</p>
+                <input type="text" class="form-control" id="inputadminpassword" name="inputadminpassword" value="">
               
 
               </div>
