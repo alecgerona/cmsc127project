@@ -52,7 +52,7 @@
                         <a href="admin">User Accounts</a>
                     </li>
                     <li>
-                        <a href="viewOrderHistory">Order History</a>
+                        <a href="viewAdminOrderHistory">Order History</a>
                     </li>
                     <li>
                         <a href="inventorypage">Inventory Record</a>
