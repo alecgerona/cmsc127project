@@ -302,6 +302,11 @@ class Inventory_model extends CI_Model{
    		return $query->result_array(); 	
 	}
 
+	public function popinventoryrecord(){
+		$query = $this->db->select('*')->from('invhistory')->get();
+		return $query->result_array();
+	}
+
 	public function poporderhistory(){
 		$query = $this->db->select('date, time, pname, quantity, price, username')->from('orderhistory')->get();
    		return $query->result_array(); 	
