@@ -10,7 +10,7 @@
         </div>
         <!-- /.row -->
         <div align="center">
-            <a data-toggle="modal" data-target="#SOR" id="export-btn" class="btn btn-primary">Generate Sales Order Report</a>
+            <a data-toggle="modal" data-target="#SOR" id="export-btn" class="btn btn-primary">Generate Inventory Record Report</a>
         </div>
         <br>
         <div align="center">
