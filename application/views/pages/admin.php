@@ -13,7 +13,7 @@
                 <h5>@<?php echo $row['username'];?></h5>
                 <h5>Password: <?php echo $row['password'];?></h5>
                 <a data-toggle="modal" data-target="#myModal" class="btn-sm btn-warning" onclick="editselection('<?php echo $row['name'];?>', '<?php echo $row['username'];?>', '<?php echo $row['password'];?>', '<?php echo $row['adminid'];?>')">Edit</a>
-                <a data-toggle="modal" data-target="#deleteModal" class="btn-sm btn-danger">Delete</a>
+                <a data-toggle="modal" data-target="#deleteModal" onclick="deleteadmin('<?php echo $row['name'];?>', '<?php echo $row['adminid'];?>')"class="btn-sm btn-danger">Delete</a>
                 <hr style="margin:8px auto">
             </div>
         </div>
@@ -46,13 +46,38 @@
 <?php endforeach; ?>
 </div>
 
-<!-- Edi Modal for admins -->
+<!-- Delete Modal for admins -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete Admin Account</h4>
+              </div>
+              <div class="modal-body">
+              <form action="deleteadmin" method="POST">
+                <p id="deleteadminname"></p>
+                <input type="hidden" class="form-control" id="deleteadminadminid" name="deleteadminadminid" value="">
+              
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
+
+<!-- Edit Modal for admins -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Edit Account</h4>
+                <h4 class="modal-title" id="myModalLabel">Edit Admin Account</h4>
               </div>
               <div class="modal-body">
               <form action="updateadmin" method="POST">
