@@ -14,7 +14,7 @@
         </div>
         <br>
         <div>
-            <a href="#" class="btn btn-default">Daily</a>
+            <a data-toggle="modal" data-target="#daily" class="btn btn-default">Daily</a>
             <a href="#" class="btn btn-default">Monthly</a>
             <a href="#" class="btn btn-default">Yearly</a>
         </div>
@@ -59,7 +59,7 @@
         </script>
 
         <!-- Day Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="daily" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -67,6 +67,13 @@
                 <h4 class="modal-title" id="myModalLabel">Confirm Purchase</h4>
               </div>
               <div class="modal-body">
+              <p>Choose what day.</p>
+                <!-- Dropdown for quantity-->
+                <select id="quantityselect">
+                    <?php for ($i = 1; $i <= 31; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
               <form method = "post" action="addinventory" name="addinventory">
                   <p>What inventory item would you like to add?</p>
                   <input type="text" placeholder="Item Name" class="form-control" id="invname" name="invname">
