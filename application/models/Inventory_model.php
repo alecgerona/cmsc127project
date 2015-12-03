@@ -307,6 +307,7 @@ class Inventory_model extends CI_Model{
    		return $query->result_array(); 	
 	}
 
+
 	public function poporderhistorydaily(){
 		$day = $this->input->post('daychange');
 		$where = "EXTRACT(day FROM date)=$day";

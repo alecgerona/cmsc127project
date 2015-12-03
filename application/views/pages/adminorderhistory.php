@@ -10,7 +10,7 @@
         </div>
         <!-- /.row -->
         <div>
-            <a href="generateSOR" class="btn btn-primary">Generate Sales Order Report</a>
+            <a data-toggle="modal" data-target="#SOR" id="export-btn" class="btn btn-primary">Generate Sales Order Report</a>
         </div>
         <br>
         <div>
@@ -57,6 +57,32 @@
             $('#ordertable').DataTable();
         } );
         </script>
+
+        <!-- Generate SOR Modal -->
+        <div class="modal fade" id="SOR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sales Order Report</h4>
+              </div>
+              <div class="modal-body">
+              <p>Are you sure you want to generate a sales order report?</p>
+                
+              <form method = "post" action="sortSOR">
+                  <input type="hidden" class="form-control" id="orderlist" name="orderlist">
+    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <input type="submit" class = "btn btn-primary" value="Confirm">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
 
         <!-- Year Modal -->
         <div class="modal fade" id="yearly" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
