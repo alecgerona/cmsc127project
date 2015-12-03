@@ -41,5 +41,17 @@ class Login_model extends CI_Model{
 	    }
 		
 	}
+
+	public function popadminaccount(){
+
+		$query = $this->db->select('*')->from('admin')->get();
+   		return $query->result_array(); 	
+	}
+
+	public function popuseraccount(){
+
+		$query = $this->db->select('*')->from('posuser')->get();
+   		return $query->result_array(); 	
+	}
 }
 ?>
