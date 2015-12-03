@@ -212,6 +212,16 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer-admin');
 	}
 
+	public function sortyearly(){
+		$this->load->database();
+		$this->load->model('inventory_model');
+		$data['query'] = $this->inventory_model->poporderhistoryyearly();
+
+		$this->load->view('templates/header-admin');
+		$this->load->view('pages/adminorderhistory', $data);
+		$this->load->view('templates/footer-admin');
+	}
+
 	public function generateSOR(){
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->poporderhistory();

@@ -321,6 +321,13 @@ class Inventory_model extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function poporderhistoryyearly(){
+		$year = $this->input->post('yearchange');
+		$where = "EXTRACT(year FROM date)=$year";
+		$query = $this->db->select('*')->from('orderhistory')->where($where)->get();
+		return $query->result_array();
+	}
+
 	public function poporderlist(){
 		$query = $this->db->select('*')->from('OrderList')->get();
 		return $query->result_array();
