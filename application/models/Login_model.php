@@ -12,7 +12,7 @@ class Login_model extends CI_Model{
 
 		
 		
-		$this -> db -> select('username, password');
+		$this -> db -> select('name');
 	    $this -> db -> from('posuser');
 	    $this -> db -> where('username', $username);
 	    $this -> db -> where('password', $password);
@@ -23,21 +23,21 @@ class Login_model extends CI_Model{
 	    if($query -> num_rows() == 1)
 	    {
 
-	    $this->session->set_userdata('username', $this->input->post('username'));
+	    $this->session->set_userdata('username', $query);
 	      return $query->result();
 	    }
 
 	    else
 	    {
 
-		    $this -> db -> select('username, password');
+		    $this -> db -> select('name');
 		    $this -> db -> from('admin');
 		    $this -> db -> where('username', $username);
 		    $this -> db -> where('password', $password);
 		    $query = $this->db->get();
 
 		    if ($query-> num_rows() == 1){
-		    	$this->session->set_userdata('username', $this->input->post('username'));
+		    	$this->session->set_userdata('username', $query->row()->name);
 		    	return $query->result();
 		    }
 		    return false;

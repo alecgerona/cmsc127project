@@ -59,8 +59,6 @@ class Pages extends CI_Controller {
 			// If user did validate, 
 			// Send them to members area
 			
-			$this->session->set_userdata('username', $this->input->post('username'));
-
 			$sql = "SELECT username, password FROM admin WHERE username='$username' and password='$password'";
 			$query = $this->db->query($sql);
 			if ($query-> num_rows() == 1){ //Is admin
