@@ -1,6 +1,16 @@
 <br>
 <br>
 <div class="row">
+    <div style="padding-left:5%;">
+        <button class = "btn btn-default">Add new Admin account</button>
+        <button class = "btn btn-default">Add new User account</button>
+    </div>
+
+</div>
+<br>
+
+
+<div class="row">
 
 <?php foreach ($query as $row): { ?>
        <div class="col-lg-5">
