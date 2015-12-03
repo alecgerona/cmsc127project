@@ -13,6 +13,12 @@
             <a href="generateSOR" class="btn btn-primary">Generate Sales Order Report</a>
         </div>
         <br>
+        <div>
+            <a href="#" class="btn btn-default">Daily</a>
+            <a href="#" class="btn btn-default">Monthly</a>
+            <a href="#" class="btn btn-default">Yearly</a>
+        </div>
+        <br>
 
         <div  style="float:left;">
         <table class="table table-striped table-bordered" id="ordertable">
@@ -52,6 +58,33 @@
         } );
         </script>
 
+        <!-- Day Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirm Purchase</h4>
+              </div>
+              <div class="modal-body">
+              <form method = "post" action="addinventory" name="addinventory">
+                  <p>What inventory item would you like to add?</p>
+                  <input type="text" placeholder="Item Name" class="form-control" id="invname" name="invname">
+                  <input type="number" placeholder="Item Quantity" class="form-control" id="invqty" name="invqty">
+                  <input type="number" placeholder="Item Classification" class="form-control" id="invclass" name="invclass">
+    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <input type="submit" class = "btn btn-primary" value="Confirm">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
+
 
     <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -79,3 +112,4 @@
           </div>
         </div>
     <!--End Modal -->
+
