@@ -3,7 +3,7 @@
 <div class="row">
     <div style="padding-left:5%;">
         <a data-toggle="modal" data-target="#addAdmin" class = "btn btn-default">Add new Admin account</a>
-        <a class = "btn btn-default">Add new User account</a>
+        <a data-toggle="modal" data-target="#addUser" class = "btn btn-default">Add new User account</a>
     </div>
 
 </div>
@@ -57,6 +57,34 @@
 <?php } ?>
 <?php endforeach; ?>
 </div>
+
+<!-- Add Modal for users -->
+        <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add User Account</h4>
+              </div>
+              <div class="modal-body">
+              <form action="adduser" method="POST">
+                <input type="text" class="form-control" id="addusername" name="addusername" placeholder="Name">
+                <br>
+                <input type="text" class="form-control" id="adduserusername" name="adduserusername" placeholder="Username">
+                <br>
+                <input type="text" class="form-control" id="adduserpassword" name="adduserpassword" placeholder="Password">
+              
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
 
 <!-- Add Modal for admins -->
         <div class="modal fade" id="addAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
