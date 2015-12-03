@@ -163,6 +163,21 @@ class Pages extends CI_Controller {
         $this->load->view('templates/footer-admin');
 	}
 
+	public function deleteuser(){
+		$this->load->database();
+		$this->load->model('admin_model');
+		$this->admin_model->deleteuserinfo();
+
+		$this->load->model('login_model');
+		$data['query'] = $this->login_model->popadminaccount();
+		$data['query2'] = $this->login_model->popuseraccount();
+
+
+		$this->load->view('templates/header-admin');
+        $this->load->view('pages/admin', $data);
+        $this->load->view('templates/footer-admin');				
+	}
+
 	public function user(){
 	 	$this->load->database();
 	 	$this->load->model('inventory_model');

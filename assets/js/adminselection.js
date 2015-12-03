@@ -20,6 +20,11 @@ function editUser(username, userusername, userpassword, userid){
 	document.getElementById("edituseruserid").value = userid;
 }
 
+function deleteuser(username, userid){
+  document.getElementById("deleteusername").innerHTML = "Delete " + username + "'s account?";
+  document.getElementById("deleteuserid").value = userid;
+}
+
 function changeday(){
 	var day = document.getElementById("dayselect").value; //Get the value from the day select
 	document.getElementById("daychange").value = day; //Change the input value to the selected value

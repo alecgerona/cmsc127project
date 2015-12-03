@@ -46,7 +46,7 @@
                 <h5>@<?php echo $row['username'];?></h5>
                 <h5>Password: <?php echo $row['password'];?></h5>
                 <a data-toggle="modal" data-target="#editUser" onclick="editUser('<?php echo $row['name'];?>', '<?php echo $row['username'];?>', '<?php echo $row['password'];?>', '<?php echo $row['userid'];?>')" class="btn-sm btn-warning">Edit</a>
-                <a href="#" class="btn-sm btn-danger">Delete</a>
+                <a data-toggle="modal" data-target="#deleteUser" onclick="deleteuser('<?php echo $row['name'];?>', '<?php echo $row['userid'];?>')" class="btn-sm btn-danger">Delete</a>
                 <hr style="margin:8px auto">
                 
             </div>
@@ -101,6 +101,31 @@
                 <input type="text" class="form-control" id="addadminusername" name="addadminusername" placeholder="Username">
                 <br>
                 <input type="text" class="form-control" id="addadminpassword" name="addadminpassword" placeholder="Password">
+              
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
+
+    <!-- Delete Modal for users -->
+        <div class="modal fade" id="deleteUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete User Account</h4>
+              </div>
+              <div class="modal-body">
+              <form action="deleteuser" method="POST">
+                <p id="deleteusername"></p>
+                <input type="hidden" class="form-control" id="deleteuserid" name="deleteuserid" value="">
               
 
               </div>

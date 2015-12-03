@@ -31,6 +31,12 @@ class Admin_model extends CI_Model{
 		$query = $this->db->query($sql);
 	}
 
+	public function deleteuserinfo(){
+		$id = $this->input->post('deleteuserid');
+		$sql = "DELETE FROM posuser where userid=$id";
+		$query = $this->db->query($sql);
+	}
+
 	public function addadmininfo(){
 		$name = $this->input->post('addadminname');
 		$username = $this->input->post('addadminusername');
