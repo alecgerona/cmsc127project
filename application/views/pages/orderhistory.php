@@ -18,6 +18,7 @@
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
+                    <th>Ordered by</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Product Name</th>
@@ -28,6 +29,7 @@
 
             <?php foreach ($query as $row): { ?>
             <tr>
+                <td><?php echo $row['username'];?></td>
                 <td><?php echo $row['date'];?></td>
                 <td><?php echo $row['time'];?></td>
                 <td><?php echo $row['pname'];?></td>

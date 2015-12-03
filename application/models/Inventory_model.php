@@ -7,10 +7,11 @@ class Inventory_model extends CI_Model{
 
 	public function useingredients(){
 		$orderlist = json_decode($this->input->post('orderlist'), true);
-
+		$this->load->library('session');
 		$name;
 		$minuser = 0;
 		$price;
+		$username = $this->session->userdata('username');
 
 		foreach($orderlist as $key => $value){
 			if ($value['ProductName'] == 'Beefy Burger'){
@@ -32,8 +33,10 @@ class Inventory_model extends CI_Model{
 				$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='Tomato Pack'";
 				$query = $this->db->query($sql);
 
-				$sql = "INSERT into orderhistory(pname, quantity, price, date, time) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP)";
+				$sql = "INSERT into orderhistory(pname, quantity, price, date, time, username) values('$name', $minuser, $price, CURRENT_DATE, CURRENT_TIMESTAMP, '$username')";
 				$query = $this->db->query($sql);
+
+
 
 				
 
@@ -300,7 +303,7 @@ class Inventory_model extends CI_Model{
 	}
 
 	public function poporderhistory(){
-		$query = $this->db->select('date, time, pname, quantity, price')->from('orderhistory')->get();
+		$query = $this->db->select('date, time, pname, quantity, price, username')->from('orderhistory')->get();
    		return $query->result_array(); 	
 	}
 
