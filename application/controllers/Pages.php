@@ -91,6 +91,17 @@ class Pages extends CI_Controller {
 
 	public function updateadmin(){
 		$this->load->database();
+		$this->load->model('admin_model');
+		$this->admin_model->admininfo();
+
+		$this->load->model('login_model');
+		$data['query'] = $this->login_model->popadminaccount();
+		$data['query2'] = $this->login_model->popuseraccount();
+
+
+		$this->load->view('templates/header-admin');
+        $this->load->view('pages/admin', $data);
+        $this->load->view('templates/footer-admin');
 
 	}
 
