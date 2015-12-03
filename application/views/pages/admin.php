@@ -67,7 +67,7 @@
                 <h4 class="modal-title" id="myModalLabel">Add Admin Account</h4>
               </div>
               <div class="modal-body">
-              <form action="updateadmin" method="POST">
+              <form action="addadmin" method="POST">
                 <input type="text" class="form-control" id="addadminname" name="addadminname" placeholder="Name">
                 <br>
                 <input type="text" class="form-control" id="addadminusername" name="addadminusername" placeholder="Username">
