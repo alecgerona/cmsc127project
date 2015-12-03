@@ -359,10 +359,25 @@ class Inventory_model extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function poprecordmonthly(){
+		$month = $this->input->post('monthchange');
+		$where = "EXTRACT(month FROM date)=$month";
+		$query = $this->db->select('*')->from('invhistory')->where($where)->get();
+		return $query->result_array();
+	}
+
+
 	public function poporderhistoryyearly(){
 		$year = $this->input->post('yearchange');
 		$where = "EXTRACT(year FROM date)=$year";
 		$query = $this->db->select('*')->from('orderhistory')->where($where)->get();
+		return $query->result_array();
+	}
+
+	public function poprecordyearly(){
+		$year = $this->input->post('yearchange');
+		$where = "EXTRACT(year FROM date)=$year";
+		$query = $this->db->select('*')->from('invhistory')->where($where)->get();
 		return $query->result_array();
 	}
 

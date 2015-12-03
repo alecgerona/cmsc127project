@@ -9,12 +9,12 @@
             </div>
         </div>
         <!-- /.row -->
-        <div>
+        <div align="center">
             <a href="generateSOR" class="btn btn-primary">Generate Sales Order Report</a>
         </div>
         <br>
 
-        <div  style="float:left;">
+        <div  align="center">
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
