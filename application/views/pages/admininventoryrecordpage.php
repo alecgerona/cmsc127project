@@ -4,7 +4,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Inventory
+                <h1 class="page-header">Inventory Record
                 </h1>
             </div>
         </div>
@@ -12,7 +12,7 @@
 
         <br>
 
-        <div  style="float:left;">
+        <div  align="center">
         <table class="table table-striped table-bordered" id="ordertable">
             <thead>
                 <tr>
