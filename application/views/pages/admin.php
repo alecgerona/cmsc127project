@@ -33,6 +33,7 @@
 <?php } ?>
 <?php endforeach; ?>
 </div>
+<br>
 
 <div class ="row" style="padding-left:1%;">
 <?php foreach ($query2 as $row): { ?>
