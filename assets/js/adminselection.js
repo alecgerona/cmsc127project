@@ -21,3 +21,8 @@ function changeday(){
 	var day = document.getElementById("dayselect").value;
 	document.getElementById("daychange").value = day;
 }
+
+function changemonth(){
+	var month = document.getElementById("monthselect").value;
+	document.getElementById("monthchange").value = month;
+}

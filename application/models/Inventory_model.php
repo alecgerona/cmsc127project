@@ -314,6 +314,13 @@ class Inventory_model extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function poporderhistorymonthly(){
+		$month = $this->input->post('monthchange');
+		$where = "EXTRACT(month FROM date)=$month";
+		$query = $this->db->select('*')->from('orderhistory')->where($where)->get();
+		return $query->result_array();
+	}
+
 	public function poporderlist(){
 		$query = $this->db->select('*')->from('OrderList')->get();
 		return $query->result_array();

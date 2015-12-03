@@ -15,7 +15,7 @@
         <br>
         <div>
             <a data-toggle="modal" data-target="#daily" class="btn btn-default">Daily</a>
-            <a href="#" class="btn btn-default">Monthly</a>
+            <a data-toggle="modal" data-target="#monthly" class="btn btn-default">Monthly</a>
             <a href="#" class="btn btn-default">Yearly</a>
         </div>
         <br>
@@ -57,6 +57,47 @@
             $('#ordertable').DataTable();
         } );
         </script>
+
+        <!-- Month Modal -->
+        <div class="modal fade" id="monthly" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirm Purchase</h4>
+              </div>
+              <div class="modal-body">
+              <p>Choose what day.</p>
+                <!-- Dropdown for quantity-->
+                <!-- Month dropdown -->
+                  <select name="monthselect" id="monthselect" onchange="changemonth()" size="1">
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                  </select>
+              <form method = "post" action="sortmonthly">
+                  <input type="hidden" class="form-control" id="monthchange" name="monthchange">
+    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                <input type="submit" class = "btn btn-primary" value="Confirm">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
 
         <!-- Day Modal -->
         <div class="modal fade" id="daily" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
