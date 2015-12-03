@@ -22,6 +22,8 @@ class Login_model extends CI_Model{
 	 
 	    if($query -> num_rows() == 1)
 	    {
+
+	    $this->session->set_userdata('username', $this->input->post('username'));
 	      return $query->result();
 	    }
 
@@ -35,6 +37,7 @@ class Login_model extends CI_Model{
 		    $query = $this->db->get();
 
 		    if ($query-> num_rows() == 1){
+		    	$this->session->set_userdata('username', $this->input->post('username'));
 		    	return $query->result();
 		    }
 		    return false;

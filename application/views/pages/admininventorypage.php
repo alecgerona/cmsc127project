@@ -30,7 +30,7 @@
                 <td><?php echo $row['itemname'];?></td>
                 <td><?php echo $row['itemcount'];?></td>
                 <td align="center"><a data-toggle="modal" data-target="#editInv" onclick="addQuantity('<?php echo $row['itemname'];?>')" class="btn-sm btn-warning">Add</a></td>
-                <td align="center"><a data-toggle="modal" data-target="#subInv" onclick="addQuantity('<?php echo $row['itemname'];?>')" class="btn-sm btn-danger">Subtract</a></td>
+                <td align="center"><a data-toggle="modal" data-target="#subInv" onclick="subQuantity('<?php echo $row['itemname'];?>')" class="btn-sm btn-danger">Subtract</a></td>
             </tr>    
             <?php } ?>
             <?php endforeach; ?>
@@ -113,10 +113,10 @@
                 <h4 class="modal-title" id="myModalLabel">Subtract from Inventory</h4>
               </div>
               <div class="modal-body">
-              <form action="editinventory" method="POST">
-                <p id="addinventoryp"></p>
-                <input type="number" class="form-control" id="addqty" name="addqty" placeholder="Subtract by how much.">
-                <input type="hidden" class="form-control" id="itemname" name="itemname">
+              <form action="subfrominventory" method="POST">
+                <p id="subinventoryp"></p>
+                <input type="number" class="form-control" id="subqty" name="subqty" placeholder="Subtract by how much.">
+                <input type="hidden" class="form-control" id="itemnamesub" name="itemnamesub">
               
 
               </div>
@@ -141,7 +141,7 @@
               </div>
               <div class="modal-body">
               <form action="editinventory" method="POST">
-                <p id="subinventoryp"></p>
+                <p id="addinventoryp"></p>
                 <input type="number" class="form-control" id="addqty" name="addqty" placeholder="Add by how much.">
                 <input type="hidden" class="form-control" id="itemname" name="itemname">
               

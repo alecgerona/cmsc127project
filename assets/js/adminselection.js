@@ -40,6 +40,11 @@ function addQuantity(itemname){
   document.getElementById("itemname").value = itemname;
 }
 
+function subQuantity(itemname){
+  document.getElementById("subinventoryp").innerHTML = "Subtract from " + itemname + ".";
+  document.getElementById("itemnamesub").value = itemname;
+}
+
 // A few jQuery helpers for exporting only
 jQuery.fn.pop = [].pop;
 jQuery.fn.shift = [].shift;

@@ -58,8 +58,7 @@ class Pages extends CI_Controller {
 		}else{
 			// If user did validate, 
 			// Send them to members area
-
-			$this->session->set_userdata('username', $this->input->post('username'));
+			
 
 			$sql = "SELECT username, password FROM admin WHERE username='$username' and password='$password'";
 			$query = $this->db->query($sql);
@@ -204,6 +203,18 @@ class Pages extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$this->inventory_model->addtoinventory();
+
+		$data['query'] = $this->inventory_model->popinventory();
+
+		$this->load->view('templates/header-admin');
+		$this->load->view('pages/admininventorypage', $data);
+		$this->load->view('templates/footer-admin');
+	}
+
+	public function subfrominventory(){
+		$this->load->library('session');
+		$this->load->model('inventory_model');
+		$this->inventory_model->subfrominv();
 
 		$data['query'] = $this->inventory_model->popinventory();
 

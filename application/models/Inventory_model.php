@@ -312,7 +312,18 @@ class Inventory_model extends CI_Model{
 
 		$sql = "INSERT into invhistory(itemname, username, date, time, quantity) values('$itemname', '$username', CURRENT_DATE, CURRENT_TIMESTAMP, $adder)";
 		$query = $this->db->query($sql);
+	}
 
+	public function subfrominv(){
+		$minuser = $this->input->post('subqty');
+		$itemname = $this->input->post('itemnamesub');
+		$username = $this->session->userdata('username');
+
+		$sql = "UPDATE inventory SET itemcount=itemcount-$minuser where itemname='$itemname'"; //Update inventory table
+		$query = $this->db->query($sql);
+
+		$sql = "INSERT into invhistory(itemname, username, date, time, quantityminus) values('$itemname', '$username', CURRENT_DATE, CURRENT_TIMESTAMP, $minuser)";
+		$query = $this->db->query($sql);
 	}
 
 
