@@ -104,6 +104,32 @@
         }
     </script>
 
+    <!-- Subtract inventory Modal for admin -->
+        <div class="modal fade" id="subInv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Subtract from Inventory</h4>
+              </div>
+              <div class="modal-body">
+              <form action="editinventory" method="POST">
+                <p id="addinventoryp"></p>
+                <input type="number" class="form-control" id="addqty" name="addqty" placeholder="Subtract by how much.">
+                <input type="hidden" class="form-control" id="itemname" name="itemname">
+              
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--End Modal -->
+
 
    <!-- Add inventory Modal for admin -->
         <div class="modal fade" id="editInv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -111,12 +137,12 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Edit Inventory</h4>
+                <h4 class="modal-title" id="myModalLabel">Add to Inventory</h4>
               </div>
               <div class="modal-body">
               <form action="editinventory" method="POST">
-                <p id="addinventoryp"></p>
-                <input type="number" class="form-control" id="addqty" name="addqty" placeholder="Add by how much">
+                <p id="subinventoryp"></p>
+                <input type="number" class="form-control" id="addqty" name="addqty" placeholder="Add by how much.">
                 <input type="hidden" class="form-control" id="itemname" name="itemname">
               
 
