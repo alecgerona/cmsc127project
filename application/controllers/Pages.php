@@ -1,6 +1,9 @@
 <?php
 class Pages extends CI_Controller {
 
+	
+
+
 	public function view($page = 'home'){
 
 		 if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
@@ -41,6 +44,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function process(){
+		$this->load->library('session');
 		// Load the model
 		$this->load->model('login_model');
 		// Validate the user can login
@@ -52,6 +56,7 @@ class Pages extends CI_Controller {
 		}else{
 			// If user did validate, 
 			// Send them to members area
+			$this->session->set_userdata('username', $this->input->post('username'));
 			$this->load->view('templates/header-user');
 			redirect('Pages/user');
 			$this->load->view('templates/footer-user');
