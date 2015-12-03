@@ -44,6 +44,8 @@ class Pages extends CI_Controller {
 	}
 
 	public function process(){
+		$username=$this->input->post('username');
+		$password=$this->input->post('password');
 		$this->load->library('session');
 		// Load the model
 		$this->load->model('login_model');
@@ -56,10 +58,23 @@ class Pages extends CI_Controller {
 		}else{
 			// If user did validate, 
 			// Send them to members area
+
 			$this->session->set_userdata('username', $this->input->post('username'));
-			$this->load->view('templates/header-user');
-			redirect('Pages/user');
-			$this->load->view('templates/footer-user');
+
+			$sql = "SELECT username, password FROM admin WHERE username='$username' and password='$password'";
+			$query = $this->db->query($sql);
+			if ($query-> num_rows() == 1){ //Is admin
+		    	$this->load->view('templates/header-user');
+				redirect('Pages/orderhistory');
+				$this->load->view('templates/footer-user');
+		    } 
+		    else { //Is user
+		    	$this->load->view('templates/header-user');
+				redirect('Pages/user');
+				$this->load->view('templates/footer-user');
+		    }
+
+
 		}		
 	}
 

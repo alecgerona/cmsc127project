@@ -24,9 +24,20 @@ class Login_model extends CI_Model{
 	    {
 	      return $query->result();
 	    }
+
 	    else
 	    {
-	      return false;
+
+		    $this -> db -> select('username, password');
+		    $this -> db -> from('admin');
+		    $this -> db -> where('username', $username);
+		    $this -> db -> where('password', $password);
+		    $query = $this->db->get();
+
+		    if ($query-> num_rows() == 1){
+		    	return $query->result();
+		    }
+		    return false;
 	    }
 		
 	}
