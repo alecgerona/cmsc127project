@@ -55,7 +55,7 @@
                 <h4 class="modal-title" id="myModalLabel">Edit Account</h4>
               </div>
               <div class="modal-body">
-              <form action="purchase" method="POST">
+              <form action="updateadmin" method="POST">
                 <p>Name:</p>
                 <input type="text" class="form-control" id="inputadminname" name="inputadminname" value="">
                 <br>
@@ -69,8 +69,8 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
               </div>
             </div>
           </div>

@@ -89,6 +89,11 @@ class Pages extends CI_Controller {
         $this->load->view('templates/footer-admin');
 	}
 
+	public function updateadmin(){
+		$this->load->database();
+
+	}
+
 	public function user(){
 	 	$this->load->database();
 	 	$this->load->model('inventory_model');
