@@ -20,6 +20,8 @@
                 <tr>
                     <th>Item Name</th>
                     <th>Item Count</th>
+                    <th>Increase</th>
+                    <th>Decrease</th>
                 </tr>
             </thead>
 
@@ -27,6 +29,8 @@
             <tr>
                 <td><?php echo $row['itemname'];?></td>
                 <td><?php echo $row['itemcount'];?></td>
+                <td align="center"><a data-toggle="modal" data-target="#editInv" onclick="addQuantity('<?php echo $row['itemname'];?>')" class="btn-sm btn-warning">Add</a></td>
+                <td align="center"><a data-toggle="modal" data-target="#subInv" onclick="addQuantity('<?php echo $row['itemname'];?>')" class="btn-sm btn-danger">Subtract</a></td>
             </tr>    
             <?php } ?>
             <?php endforeach; ?>
@@ -101,27 +105,26 @@
     </script>
 
 
-    <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <!-- Add inventory Modal for admin -->
+        <div class="modal fade" id="editInv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Confirm Purchase</h4>
+                <h4 class="modal-title" id="myModalLabel">Edit Inventory</h4>
               </div>
               <div class="modal-body">
-              <form method = "post" action="addinventory" name="addinventory">
-                  <p>What inventory item would you like to add?</p>
-                  <input type="text" placeholder="Item Name" class="form-control" id="invname" name="invname">
-                  <input type="number" placeholder="Item Quantity" class="form-control" id="invqty" name="invqty">
-                  <input type="number" placeholder="Item Classification" class="form-control" id="invclass" name="invclass">
-    
+              <form action="editinventory" method="POST">
+                <p id="addinventoryp"></p>
+                <input type="number" class="form-control" id="addqty" name="addqty" placeholder="Add by how much">
+                <input type="hidden" class="form-control" id="itemname" name="itemname">
+              
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                
-                <input type="submit" class = "btn btn-primary" value="Confirm">
-                </form>
+                <input type="submit" class="btn btn-primary" value="Confirm">
+              </form>
               </div>
             </div>
           </div>

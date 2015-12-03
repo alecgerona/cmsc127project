@@ -289,7 +289,7 @@ class Inventory_model extends CI_Model{
 		$invqty = $this->input->post('invqty');
 		$invclass = $this->input->post('invclass');
 
-		$sql = "INSERT into inventory(itemname, itemcount, classification) values('$invname', $invqty, $invclass);";
+		$sql = "INSERT into inventory(itemname, itemcount, classification) values('$invname', $invqty, $invclass)";
 		$query = $this->db->query($sql);
 
 
@@ -301,6 +301,20 @@ class Inventory_model extends CI_Model{
 		$query = $this->db->select('itemcount, itemname')->from('inventory')->get();
    		return $query->result_array(); 	
 	}
+
+	public function addtoinventory(){
+		$adder = $this->input->post('addqty');
+		$itemname = $this->input->post('itemname');
+		$username = $this->session->userdata('username');
+
+		$sql = "UPDATE inventory SET itemcount=itemcount+$adder where itemname='$itemname'"; //Update inventory table
+		$query = $this->db->query($sql);
+
+		$sql = "INSERT into invhistory(itemname, username, date, time, quantity) values('$itemname', '$username', CURRENT_DATE, CURRENT_TIMESTAMP, $adder)";
+		$query = $this->db->query($sql);
+
+	}
+
 
 	public function popinventoryrecord(){
 		$query = $this->db->select('*')->from('invhistory')->get();

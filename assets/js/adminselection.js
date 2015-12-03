@@ -34,6 +34,12 @@ function changeyear(){
 	var year = document.getElementById("yearselect").value; //Get the value from the year select
 	document.getElementById("yearchange").value = year; //Change the input value to the selected value
 }
+
+function addQuantity(itemname){
+  document.getElementById("addinventoryp").innerHTML = "Add to " + itemname + ".";
+  document.getElementById("itemname").value = itemname;
+}
+
 // A few jQuery helpers for exporting only
 jQuery.fn.pop = [].pop;
 jQuery.fn.shift = [].shift;
