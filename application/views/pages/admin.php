@@ -10,6 +10,7 @@
             </a>
             <div class="media-body">
                 <h4 class="media-heading"><?php echo $row['name'];?><small> Admin</small></h4>
+                <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
             </div>
         </div>
@@ -29,6 +30,7 @@
             </a>
             <div class="media-body">
                 <h4 class="media-heading"><?php echo $row['fname'] . " " . $row['mname'] . ". " . $row['lname'];?><small> User</small></h4>
+                <h5>@<?php echo $row['username'];?></h5>
                 <hr style="margin:8px auto">
             </div>
         </div>
