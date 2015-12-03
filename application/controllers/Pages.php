@@ -64,9 +64,9 @@ class Pages extends CI_Controller {
 			$sql = "SELECT username, password FROM admin WHERE username='$username' and password='$password'";
 			$query = $this->db->query($sql);
 			if ($query-> num_rows() == 1){ //Is admin
-		    	$this->load->view('templates/header-user');
-				redirect('Pages/orderhistory');
-				$this->load->view('templates/footer-user');
+		    	$this->load->view('templates/header-admin');
+				redirect('Pages/admin');
+				$this->load->view('templates/footer-admin');
 		    } 
 		    else { //Is user
 		    	$this->load->view('templates/header-user');
@@ -76,6 +76,14 @@ class Pages extends CI_Controller {
 
 
 		}		
+	}
+
+	public function admin(){
+		$this->load->database();
+
+	 	$this->load->view('templates/header-admin');
+        $this->load->view('pages/admin');
+        $this->load->view('templates/footer-admin');
 	}
 
 	public function user(){
