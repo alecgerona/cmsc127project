@@ -16,7 +16,7 @@
         <div>
             <a data-toggle="modal" data-target="#daily" class="btn btn-default">Daily</a>
             <a data-toggle="modal" data-target="#monthly" class="btn btn-default">Monthly</a>
-            <a href="#" class="btn btn-default">Yearly</a>
+            <a data-toggle="modal" data-target="#yearly" class="btn btn-default">Yearly</a>
         </div>
         <br>
 
@@ -67,25 +67,15 @@
                 <h4 class="modal-title" id="myModalLabel">Sort by Year</h4>
               </div>
               <div class="modal-body">
-              <p>Choose what day.</p>
+              <p>Choose what year.</p>
                 <!-- Dropdown for quantity-->
-                <!-- Month dropdown -->
-                  <select name="monthselect" id="monthselect" onchange="changemonth()" size="1">
-                      <option value="1">January</option>
-                      <option value="2">February</option>
-                      <option value="3">March</option>
-                      <option value="4">April</option>
-                      <option value="5">May</option>
-                      <option value="6">June</option>
-                      <option value="7">July</option>
-                      <option value="8">August</option>
-                      <option value="9">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
-                  </select>
-              <form method = "post" action="sortmonthly">
-                  <input type="hidden" class="form-control" id="monthchange" name="monthchange">
+                <select id="yearselect" onchange="changeyear()">
+                    <?php for ($i = 2000; $i <= 2015; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+              <form method = "post" action="sortyearly">
+                  <input type="hidden" class="form-control" id="yearchange" name="yearchange">
     
               </div>
               <div class="modal-footer">
@@ -108,7 +98,7 @@
                 <h4 class="modal-title" id="myModalLabel">Sort by Month</h4>
               </div>
               <div class="modal-body">
-              <p>Choose what day.</p>
+              <p>Choose what month.</p>
                 <!-- Dropdown for quantity-->
                 <!-- Month dropdown -->
                   <select name="monthselect" id="monthselect" onchange="changemonth()" size="1">
