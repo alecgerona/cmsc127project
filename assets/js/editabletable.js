@@ -53,3 +53,7 @@ $BTN.click(function () {
   // Output the result
   document.getElementById("orderlist").value = JSON.stringify(data);
 });
+
+function updatesess(){
+  document.getElementById("welcomeid").innerHTML = "Welcome";
+}

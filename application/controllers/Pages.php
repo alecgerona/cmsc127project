@@ -68,6 +68,7 @@ class Pages extends CI_Controller {
 				$this->load->view('templates/footer-admin');
 		    } 
 		    else { //Is user
+		    	$this->load->library('session');
 		    	$this->load->view('templates/header-user');
 				redirect('Pages/user');
 				$this->load->view('templates/footer-user');
@@ -180,6 +181,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function user(){
+		$this->load->library('session');
 	 	$this->load->database();
 	 	$this->load->model('inventory_model');
 
