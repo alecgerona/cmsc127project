@@ -34,13 +34,14 @@ class Pages extends CI_Controller {
 	}
 
 	public function addinventory(){
+		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$this->inventory_model->pushinventory();
 
 		$data['query'] = $this->inventory_model->popinventory();
-		$this->load->view('templates/header-user');
-		$this->load->view('pages/inventorypage', $data);
-		$this->load->view('templates/footer-user');
+		$this->load->view('templates/header-admin');
+		$this->load->view('pages/admininventorypage', $data);
+		$this->load->view('templates/footer-admin');
 	}
 
 	public function process(){
