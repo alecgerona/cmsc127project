@@ -9,9 +9,7 @@
             </div>
         </div>
         <!-- /.row -->
-        <div align="center">
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Inventory Item</a>
-        </div>
+        
         <br>
 
         <div  align="center">
