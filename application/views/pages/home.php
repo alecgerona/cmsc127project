@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     <div class="item bg bg1 active">
       <div class="container-fluid">
-        <img class="first-slide" src="assets/img/burgers.jpg" alt="First slide" style="width:100%;height:100%">
+        <img class="first-slide" src="<?php echo base_url("assets/img/burgers.jpg"); ?>" alt="First slide" style="width:100%;height:100%">
         <div class="carousel-caption">
           <h1>Burgers</h1>
           <p>This is the house of it.</p>
@@ -17,7 +17,7 @@
     </div>
     <div class="item bg bg2">
       <div class="container-fluid">
-      <img class="first-slide" src="assets/img/burgers2.jpg" alt="First slide" style="width:100%;height:100%">
+      <img class="first-slide" src="<?php echo base_url("assets/img/burgers2.jpg"); ?>" alt="First slide" style="width:100%;height:100%">
         <div class="carousel-caption">
           <h1>House</h1>
           <p>Full of burgers, it is.</p>
@@ -27,7 +27,7 @@
     </div>
     <div class="item bg bg1">
       <div class="container-fluid">
-        <img class="first-slide" src="assets/img/chef.jpg" alt="First slide" style="width:100%;height:100%">
+        <img class="first-slide" src="<?php echo base_url("assets/img/chef.jpg"); ?>" alt="First slide" style="width:100%;height:100%">
         <div class="carousel-caption">
         <h1>The</h1>
         <p>Burger House follow it.</p>
