@@ -288,8 +288,12 @@ class Inventory_model extends CI_Model{
 		$invname = $this->input->post('invname');
 		$invqty = $this->input->post('invqty');
 		$invclass = $this->input->post('invclass');
+		$username = $this->session->userdata('username');
 
-		$sql = "INSERT into inventory(itemname, itemcount, classification) values('$invname', $invqty, $invclass)";
+		$sql = "INSERT into inventory(itemname, itemcount, classification) values('$invname', $invqty, 1)";
+		$query = $this->db->query($sql);
+
+		$sql = "INSERT into invhistory(itemname, username, date, time, quantity) values('$invname', '$username', CURRENT_DATE, CURRENT_TIMESTAMP, $invqty)";
 		$query = $this->db->query($sql);
 
 
