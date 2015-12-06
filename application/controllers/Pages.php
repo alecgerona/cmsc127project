@@ -64,6 +64,7 @@ class Pages extends CI_Controller {
 			$sql = "SELECT username, password FROM admin WHERE username='$username' and password='$password'";
 			$query = $this->db->query($sql);
 			if ($query-> num_rows() == 1){ //Is admin
+				$this->load->library('session');
 		    	$this->load->view('templates/header-admin');
 				redirect('Pages/admin');
 				$this->load->view('templates/footer-admin');
@@ -80,6 +81,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function admin(){
+		$this->load->library('session');
 		$this->load->database();
 		$this->load->model('login_model');
 		$data['query'] = $this->login_model->popadminaccount();
@@ -203,6 +205,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function viewAdminOrderHistory(){
+		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->poporderhistory();
 		
@@ -212,6 +215,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function admininventorypage(){
+		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->popinventory();
 		$this->load->view('templates/header-admin');
@@ -244,6 +248,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function admininventoryrecordpage(){
+		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->popinventoryrecord();
 		$this->load->view('templates/header-admin');

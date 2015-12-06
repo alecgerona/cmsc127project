@@ -63,8 +63,16 @@
                     <li>
                         <a href="view">Logout</a>
                     </li>
+                    </ul>
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <?php $sessname = $this->session->userdata('username');?>
+                                <a href="#">Welcome, <?php echo $sessname?></a>
+                            </li>
+                        </ul>
+                    </div>
                     
-                </ul>
                     </div><!--/.navbar-collapse -->
                   </div>
                 </nav>
