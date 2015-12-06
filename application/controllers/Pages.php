@@ -26,6 +26,7 @@ class Pages extends CI_Controller {
 	}
 
 	public function inventorypage(){
+		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->popinventory();
 		$this->load->view('templates/header-user');
@@ -191,9 +192,11 @@ class Pages extends CI_Controller {
 	}
 
 	public function viewOrderHistory(){
+		$this->load->library('session');
 		$this->load->model('inventory_model');
 		$data['query'] = $this->inventory_model->poporderhistory();
 		
+
 		$this->load->view('templates/header-user');
 		$this->load->view('pages/orderhistory', $data);
 		$this->load->view('templates/footer-user');

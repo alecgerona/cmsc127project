@@ -65,7 +65,8 @@
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
                             <li>
-                                <?php $sessname = $this->session->userdata('username')?>
+                                <?php $this->load->library('session');?>
+                                <?php $sessname = $this->session->userdata('username');?>
                                 <a href="#"><?php echo $sessname?></a>
                             </li>
                         </ul>

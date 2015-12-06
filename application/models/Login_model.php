@@ -23,7 +23,7 @@ class Login_model extends CI_Model{
 	    if($query -> num_rows() == 1)
 	    {
 
-	    $this->session->set_userdata('username', $query);
+	    $this->session->set_userdata('username', $query->row()->name);
 	      return $query->result();
 	    }
 
